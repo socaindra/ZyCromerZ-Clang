@@ -26,6 +26,15 @@ jobs:
           ls
       - name: Upload Files
         run: |
+          lfs_latest_version=$(wget -qO- -t1 -T2 "https://api.github.com/repos/git-lfs/git-lfs/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g')
+          lfs_file_name="git-lfs-linux-amd64-"$lfs_latest_version".tar.gz"
+          version_code_without_v=${lfs_latest_version: 1}
+          dir_name="git-lfs-"$version_code_without_v
+          wget https://github.com/git-lfs/git-lfs/releases/download/$lfs_latest_version/$lfs_file_name
+          tar -zxvf $lfs_file_name
+          cd $dir_name
+          chmod +x install.sh
+          sudo ./install.sh
           {
               git config user.name github-actions
               git config user.email github-actions@github.com
