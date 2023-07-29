@@ -35,6 +35,10 @@ jobs:
           cd $dir_name
           chmod +x install.sh
           sudo ./install.sh
+          git lfs install
+          cd ..
+          rm -rf $dir_name
+          rm -rf $lfs_file_name
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
