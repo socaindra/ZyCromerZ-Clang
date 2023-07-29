@@ -41,6 +41,7 @@ jobs:
           rm -rf $lfs_file_name
           git config user.name 'magojohnji'
           git config user.email 'magojohnji@users.noreply.github.com'
+          git config lfs.https://github.com/magojohnji/ZyCromerZ-Clang.git/info/lfs.locksverify false
           git add .
           git commit -m "$(date "+%Y-%m-%d %H:%M:%S") UTC" -a
           git push
