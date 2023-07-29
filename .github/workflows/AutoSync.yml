@@ -13,7 +13,10 @@ jobs:
         run: |
           latest_version=$(wget -qO- -t1 -T2 "https://api.github.com/repos/ZyCromerZ/Clang/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g')
           file_name="Clang-"${latest_version%????????}".tar.gz"
+          echo $latest_version
+          echo $file_name
           wget https://github.com/ZyCromerZ/Clang/releases/download/$latest_version/$file_name
+          ls
       - name: Extract File & Clean
         run: |
           tar -zxvf $file_name
