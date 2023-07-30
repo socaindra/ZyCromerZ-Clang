@@ -39,13 +39,13 @@ jobs:
           cd ..
           rm -rf $dir_name
           rm -rf $lfs_file_name
-          git config user.name 'magojohnji'
-          git config user.email 'magojohnji@users.noreply.github.com'
-          git config lfs.https://github.com/magojohnji/ZyCromerZ-Clang.git/info/lfs.locksverify false
-          git lfs track "./lib/libclang-cpp.so.18git"
-          git add .gitattributes
-          git add .
-          git commit -m "$(date "+%Y-%m-%d %H:%M:%S") UTC" -a
-          git push
+          sudo git config user.name 'magojohnji'
+          sudo git config user.email 'magojohnji@users.noreply.github.com'
+          sudo git config lfs.https://github.com/magojohnji/ZyCromerZ-Clang.git/info/lfs.locksverify false
+          sudo git lfs track "./lib/libclang-cpp.so.18git"
+          sudo git add .gitattributes
+          sudo git add .
+          sudo git commit -m "$(date "+%Y-%m-%d %H:%M:%S") UTC" -a
+          sudo git push
 
 
