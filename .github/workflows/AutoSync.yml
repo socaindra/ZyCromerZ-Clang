@@ -1,14 +1,14 @@
 name: AutoSync
 on:
+  schedule:
+    - cron: '0  9 * * *'
   workflow_dispatch:
 
 jobs:
   Sync:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-
       - name: Download File
         run: |
           latest_version=$(wget -qO- -t1 -T2 "https://api.github.com/repos/ZyCromerZ/Clang/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g')
