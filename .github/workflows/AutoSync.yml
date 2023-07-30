@@ -41,7 +41,6 @@ jobs:
           rm -rf $lfs_file_name
           sudo git config user.name 'magojohnji'
           sudo git config user.email 'magojohnji@users.noreply.github.com'
-
           sudo git lfs track "./lib/libclang-cpp.so.18git"
           sudo git add .gitattributes
           sudo git add .
