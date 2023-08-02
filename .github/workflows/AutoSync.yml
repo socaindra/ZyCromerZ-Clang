@@ -39,15 +39,19 @@ jobs:
           cd ..
           rm -rf $dir_name
           rm -rf $lfs_file_name
+          {
           sudo git config user.name 'magojohnji'
           sudo git config user.email 'magojohnji@users.noreply.github.com'
           sudo git lfs track "./lib/libclang-cpp.so.18git"
           sudo git add .gitattributes
           sudo git add .
-          sudo git commit -m "$(date "+%Y-%m-%d %H:%M:%S") UTC" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          force: true
+          sudo git commit -m "$(date -u "+%Y-%m-%d %H:%M:%S") UTC" -a
+              if [ $? -eq 0 ]; then
+                  date >> RunDate.txt
+                  git commit -m "$(date -u "+%Y-%m-%d %H:%M:%S") UTC" -a
+                  git push
+              else
+                  echo No Update
+              fi
+          }
 
