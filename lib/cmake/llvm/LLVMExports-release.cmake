@@ -1564,6 +1564,15 @@ set_target_properties(llvm-readobj PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS llvm-readobj )
 list(APPEND _IMPORT_CHECK_FILES_FOR_llvm-readobj "${_IMPORT_PREFIX}/bin/llvm-readobj" )
 
+# Import target "llvm-readtapi" for configuration "Release"
+set_property(TARGET llvm-readtapi APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(llvm-readtapi PROPERTIES
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/bin/llvm-readtapi"
+  )
+
+list(APPEND _IMPORT_CHECK_TARGETS llvm-readtapi )
+list(APPEND _IMPORT_CHECK_FILES_FOR_llvm-readtapi "${_IMPORT_PREFIX}/bin/llvm-readtapi" )
+
 # Import target "llvm-reduce" for configuration "Release"
 set_property(TARGET llvm-reduce APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(llvm-reduce PROPERTIES
@@ -1653,15 +1662,6 @@ set_target_properties(llvm-symbolizer PROPERTIES
 
 list(APPEND _IMPORT_CHECK_TARGETS llvm-symbolizer )
 list(APPEND _IMPORT_CHECK_FILES_FOR_llvm-symbolizer "${_IMPORT_PREFIX}/bin/llvm-symbolizer" )
-
-# Import target "llvm-tapi-diff" for configuration "Release"
-set_property(TARGET llvm-tapi-diff APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-set_target_properties(llvm-tapi-diff PROPERTIES
-  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/bin/llvm-tapi-diff"
-  )
-
-list(APPEND _IMPORT_CHECK_TARGETS llvm-tapi-diff )
-list(APPEND _IMPORT_CHECK_FILES_FOR_llvm-tapi-diff "${_IMPORT_PREFIX}/bin/llvm-tapi-diff" )
 
 # Import target "llvm-tli-checker" for configuration "Release"
 set_property(TARGET llvm-tli-checker APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
