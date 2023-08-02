@@ -45,6 +45,9 @@ jobs:
           sudo git add .gitattributes
           sudo git add .
           sudo git commit -m "$(date "+%Y-%m-%d %H:%M:%S") UTC" -a
-          sudo git push -f
-
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
 
