@@ -39,6 +39,9 @@ jobs:
           cd ..
           rm -rf $dir_name
           rm -rf $lfs_file_name
+          
+      - name: Commit & Push
+        run: |
           {
           sudo git config user.name 'magojohnji'
           sudo git config user.email 'magojohnji@users.noreply.github.com'
@@ -53,5 +56,7 @@ jobs:
               else
                   echo No Update
               fi
+          } || {
+              echo Execution Failed >RunDate.txt
+              exit 1
           }
-
