@@ -1,6 +1,6 @@
 # Quick Info
-* Build Date : 20230803
-* Clang Version : ZyC clang version 18.0.0 (https://github.com/llvm/llvm-project cd328c10ad503b243cc333f813c0c6ee66598ffc)
+* Build Date : 20230805
+* Clang Version : ZyC clang version 18.0.0 (https://github.com/llvm/llvm-project eb975626ac0a52ce832d7a34a6e4515a065233f2)
 * Binutils Version : master
-* Compiled Based : https://github.com/llvm/llvm-project/commit/cd328c10
+* Compiled Based : https://github.com/llvm/llvm-project/commit/eb975626
 

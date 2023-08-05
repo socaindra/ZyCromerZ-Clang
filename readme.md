@@ -1,2 +1,2 @@
 # link downloads:
-* <a href=https://github.com/ZyCromerZ/Clang/releases/download/18.0.0-20230803-release/Clang-18.0.0-20230803.tar.gz>Clang-18.0.0-20230803.tar.gz</a>
+* <a href=https://github.com/ZyCromerZ/Clang/releases/download/18.0.0-20230805-release/Clang-18.0.0-20230805.tar.gz>Clang-18.0.0-20230805.tar.gz</a>
