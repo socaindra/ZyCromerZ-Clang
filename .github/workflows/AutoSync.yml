@@ -43,6 +43,7 @@ jobs:
       - name: Commit & Push
         run: |
           {
+          sudo rm -rf .git/COMMIT_EDITMSG
           sudo git config user.name 'magojohnji'
           sudo git config user.email 'magojohnji@users.noreply.github.com'
           sudo git lfs track "./lib/libclang-cpp.so.18git"
